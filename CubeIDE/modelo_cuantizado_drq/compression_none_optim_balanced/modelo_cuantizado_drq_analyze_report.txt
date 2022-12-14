@@ -1,0 +1,122 @@
+Neural Network Tools for STM32AI v1.6.0 (STM.ai v7.3.0-RC5)
+Created date          : 2022-12-10 07:42:55
+Parameters            : analyze --name modelo_cuantizado_drq -m /Users/juandaviddiaz/Documents/Uniandes/IX Semestre/Proyecto de Grado/Resultados/Archivos Resultados/python_comp/modelo_cuantizado_drq.tflite --type tflite --compression none --verbosity 1 --workspace /var/folders/pv/mycpgcwj3fz4q3p1v1wcwsh40000gn/T/mxAI_workspace24801049588000998434605809632173845 --output /Users/juandaviddiaz/.stm32cubemx/modelo_cuantizado_drq_output --allocate-inputs --allocate-outputs
+
+Exec/report summary (analyze)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+model file         :   /Users/juandaviddiaz/Documents/Uniandes/IX Semestre/Proyecto de Grado/Resultados/Archivos Resultados/python_comp/modelo_cuantizado_drq.tflite
+type               :   tflite                                                                                                                                       
+c_name             :   modelo_cuantizado_drq                                                                                                                        
+compression        :   none                                                                                                                                         
+options            :   allocate-inputs, allocate-outputs                                                                                                            
+optimization       :   balanced                                                                                                                                     
+target/series      :   generic                                                                                                                                      
+workspace dir      :   /private/var/folders/pv/mycpgcwj3fz4q3p1v1wcwsh40000gn/T/mxAI_workspace24801049588000998434605809632173845                                   
+output dir         :   /Users/juandaviddiaz/.stm32cubemx/modelo_cuantizado_drq_output                                                                               
+model_fmt          :   float                                                                                                                                        
+model_name         :   modelo_cuantizado_drq                                                                                                                        
+model_hash         :   039c99f0ec01e67d128d164a7261f374                                                                                                             
+params #           :   513 items (2.00 KiB)                                                                                                                         
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+input 1/1          :   'serving_default_dense_input0' (domain:activations/**default**)                                                                              
+                   :   30 items, 120 B, ai_float, float, (1,1,1,30)                                                                                                 
+output 1/1         :   'nl_2' (domain:activations/**default**)                                                                                                      
+                   :   1 items, 4 B, ai_float, float, (1,1,1,1)                                                                                                     
+macc               :   539                                                                                                                                          
+weights (ro)       :   2,052 B (2.00 KiB) (1 segment)                                                                                                               
+activations (rw)   :   184 B (184 B) (1 segment) *                                                                                                                  
+ram (total)        :   184 B (184 B) = 184 + 0 + 0                                                                                                                  
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(*) 'input'/'output' buffers can be used from the activations buffer
+
+Model name - modelo_cuantizado_drq ['serving_default_dense_input0'] ['nl_2']
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+id   layer (type,original)                     oshape       param/size   macc   connected to                   |   c_size            c_macc          c_type                  
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+0    serving_default_dense_input0 (Input, )    [b:1,c:30]                                                      |   +1,984(+100.0%)   +512(+100.0%)   dense_of32/nl_of32[0, 1]
+     dense_0 (Dense, FULLY_CONNECTED)          [b:1,c:16]   496/1,984    496    serving_default_dense_input0   |   -1,984(-100.0%)   -496(-100.0%)  
+     nl_0_nl (Nonlinearity, FULLY_CONNECTED)   [b:1,c:16]                16     dense_0                        |                     -16(-100.0%)   
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1    dense_1 (Dense, FULLY_CONNECTED)          [b:1,c:1]    17/68        17     nl_0_nl                        |                                     dense_of32[2]           
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2    nl_2 (Nonlinearity, LOGISTIC)             [b:1,c:1]                 10     dense_1                        |                                     nl_of32[o][3]           
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+model/c-model: macc=539/539  weights=2,052/2,052  activations=--/184 io=--/0
+
+
+
+Generated C-graph summary
+------------------------------------------------------------------------------------------------------------------------
+model name            : modelo_cuantizado_drq
+c-name                : modelo_cuantizado_drq
+c-node #              : 4
+c-array #             : 9
+activations size      : 184 (1 segment)
+weights size          : 2052 (1 segment)
+macc                  : 539
+inputs                : ['serving_default_dense_input0_output']
+outputs               : ['nl_2_output']
+
+C-Arrays (9)
+-------------------------------------------------------------------------------------------------------------------
+c_id   name (*_array)                        item/size   domain/mem-pool           c-type        fmt       comment
+-------------------------------------------------------------------------------------------------------------------
+0      dense_0_output                        16/64       activations/**default**   float         float32          
+1      nl_0_nl_output                        16/64       activations/**default**   float         float32          
+2      dense_1_output                        1/4         activations/**default**   float         float32          
+3      nl_2_output                           1/4         activations/**default**   float         float32   /output
+4      dense_0_weights                       480/1920    weights/weights           const float   float32          
+5      dense_0_bias                          16/64       weights/weights           const float   float32          
+6      dense_1_weights                       16/64       weights/weights           const float   float32          
+7      dense_1_bias                          1/4         weights/weights           const float   float32          
+8      serving_default_dense_input0_output   30/120      activations/**default**   float         float32   /input 
+-------------------------------------------------------------------------------------------------------------------
+
+C-Layers (4)
+------------------------------------------------------------------------------------------------------------------
+c_id   name (*_layer)   id   layer_type   macc   rom    tensors                                  shape (array id)
+------------------------------------------------------------------------------------------------------------------
+0      dense_0          0    dense        496    1984   I: serving_default_dense_input0_output   (1,1,1,30) (8)  
+                                                        W: dense_0_weights                       (30,1,1,16) (4) 
+                                                        W: dense_0_bias                          (1,1,1,16) (5)  
+                                                        O: dense_0_output                        (1,1,1,16) (0)  
+------------------------------------------------------------------------------------------------------------------
+1      nl_0_nl          0    nl           16     0      I: dense_0_output                        (1,1,1,16) (0)  
+                                                        O: nl_0_nl_output                        (1,1,1,16) (1)  
+------------------------------------------------------------------------------------------------------------------
+2      dense_1          1    dense        17     68     I: nl_0_nl_output                        (1,1,1,16) (1)  
+                                                        W: dense_1_weights                       (16,1,1,1) (6)  
+                                                        W: dense_1_bias                          (1,1,1,1) (7)   
+                                                        O: dense_1_output                        (1,1,1,1) (2)   
+------------------------------------------------------------------------------------------------------------------
+3      nl_2             2    nl           10     0      I: dense_1_output                        (1,1,1,1) (2)   
+                                                        O: nl_2_output                           (1,1,1,1) (3)   
+------------------------------------------------------------------------------------------------------------------
+
+
+
+Number of operations per c-layer
+------------------------------------------------------------------------------------------
+c_id    m_id   name (type)       #op (type)                       #param (sparsity)      
+------------------------------------------------------------------------------------------
+0       0      dense_0 (dense)               496 (smul_f32_f32)              496 (0.0020)
+1       0      nl_0_nl (nl)                   16 (op_f32_f32)                            
+2       1      dense_1 (dense)                17 (smul_f32_f32)               17 (0.0000)
+3       2      nl_2 (nl)                      10 (op_f32_f32)                            
+------------------------------------------------------------------------------------------
+total                                        539                             513 (0.0019)
+
+  Number of operation types
+  ---------------------------------------------
+  smul_f32_f32                 513       95.2%
+  op_f32_f32                    26        4.8%
+
+Complexity report (model)
+-------------------------------------------------------------------------------------------------
+m_id   name                           c_macc                    c_rom                     c_id  
+-------------------------------------------------------------------------------------------------
+0      serving_default_dense_input0   ||||||||||||||||  95.0%   ||||||||||||||||  96.7%   [0, 1]
+1      dense_1                        |                  3.2%   |                  3.3%   [2]   
+2      nl_2                           |                  1.9%   |                  0.0%   [3]   
+-------------------------------------------------------------------------------------------------
+macc=539 weights=2,052 act=184 ram_io=0
