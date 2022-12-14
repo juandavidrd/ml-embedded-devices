@@ -1,0 +1,15 @@
+Reading C:/intelFPGA_lite/19.1/modelsim_ase/tcl/vsim/pref.tcl
+
+# 10.5b
+
+# do modelo_base_fixpt_tb_sim.do
+# vsim -voptargs="+acc" work.modelo_base_fixpt_tb 
+# Start time: 19:54:36 on Dec 10,2022
+# Loading work.modelo_base_fixpt_tb
+# Loading work.modelo_base_fixpt
+# **************TEST COMPLETED (PASSED)**************
+# ** Note: $stop    : modelo_base_fixpt_tb.v(267)
+#    Time: 1470 ns  Iteration: 0  Instance: /modelo_base_fixpt_tb
+# Break in NamedBeginStat clk_gen at modelo_base_fixpt_tb.v line 267
+# End time: 19:54:37 on Dec 10,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

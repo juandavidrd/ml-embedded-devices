@@ -1,0 +1,50 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/juand/Documents/MATLAB/Resultados/modelo_base/modelo_base_hdl/modelo_base/hdlsrc
+vmodelo_base_fixpt
+!s110 1670720270
+!i10b 1
+!s100 j=[h>LbG]GLV04MAl4gHk0
+IIjT;TbdPBJXfcLSbo8@=J3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1670720013
+8modelo_base_fixpt.v
+Fmodelo_base_fixpt.v
+L0 28
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1670720270.000000
+!s107 modelo_base_fixpt.v|
+!s90 modelo_base_fixpt.v|
+!i113 1
+Z3 tCvgOpt 0
+vmodelo_base_fixpt_tb
+!s110 1670720074
+!i10b 1
+!s100 ;]LRUlA>M8aY<2GXCf6JA2
+I;jk9JZeQVFK;VZNCTNhkB0
+R1
+R0
+w1670720070
+8modelo_base_fixpt_tb.v
+Fmodelo_base_fixpt_tb.v
+L0 29
+R2
+r1
+!s85 0
+31
+!s108 1670720074.000000
+!s107 modelo_base_fixpt_tb.v|
+!s90 modelo_base_fixpt_tb.v|
+!i113 1
+R3
