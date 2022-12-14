@@ -1,0 +1,50 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/juand/Documents/MATLAB/Resultados/modelo_podado/modelo_podado_hdl/modelo_podado/hdlsrc
+vmodelo_podado_fixpt
+Z1 !s110 1670727927
+!i10b 1
+!s100 KRQn=6[dbSe4m<KK[IjLC2
+IEO<RfOo0?2EfCi5MPB@4Z3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1670727683
+8modelo_podado_fixpt.v
+Fmodelo_podado_fixpt.v
+L0 28
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1670727927.000000
+!s107 modelo_podado_fixpt.v|
+!s90 modelo_podado_fixpt.v|
+!i113 1
+Z5 tCvgOpt 0
+vmodelo_podado_fixpt_tb
+R1
+!i10b 1
+!s100 :Rz4zVi[n2K6P2GnoDnd40
+IRm6ZVlbabg_`UeUB`=ce`3
+R2
+R0
+w1670727925
+8modelo_podado_fixpt_tb.v
+Fmodelo_podado_fixpt_tb.v
+L0 29
+R3
+r1
+!s85 0
+31
+R4
+!s107 modelo_podado_fixpt_tb.v|
+!s90 modelo_podado_fixpt_tb.v|
+!i113 1
+R5

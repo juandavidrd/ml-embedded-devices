@@ -1,0 +1,11 @@
+# do modelo_podado_fixpt_tb_sim.do
+# vsim -voptargs="+acc" work.modelo_podado_fixpt_tb 
+# Start time: 22:05:28 on Dec 10,2022
+# Loading work.modelo_podado_fixpt_tb
+# Loading work.modelo_podado_fixpt
+# **************TEST COMPLETED (PASSED)**************
+# ** Note: $stop    : modelo_podado_fixpt_tb.v(267)
+#    Time: 1470 ns  Iteration: 0  Instance: /modelo_podado_fixpt_tb
+# Break in NamedBeginStat clk_gen at modelo_podado_fixpt_tb.v line 267
+# End time: 22:05:29 on Dec 10,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
